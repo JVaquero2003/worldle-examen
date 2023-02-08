@@ -20,6 +20,7 @@
 		</form:form>
 
         <c:out value="${resultado}"></c:out>
+        <c:out value="${contador}"></c:out>
         <!--contador de intentos cada vez que resultado sea Incorrecto-->
         
 	</body>

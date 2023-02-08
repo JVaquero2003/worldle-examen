@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 
 import com.examen.worldle.repository.PalabraRepository;
 
-@Profile("easy")
+@Profile("medium")
 @Service
-public class ServicePalabraEasy extends AbstractPalabraService {
+public class ServicePalabraMedium extends AbstractPalabraService {
 
     Logger l = org.apache.logging.log4j.LogManager.getLogger();
 
@@ -18,10 +18,10 @@ public class ServicePalabraEasy extends AbstractPalabraService {
     @Qualifier("listPalabra")
     public PalabraRepository repository;
 
-    public ServicePalabraEasy() {
-        PalabraCorrecta = "hola";
+    public ServicePalabraMedium() {
+        PalabraCorrecta = "adios";
 
-        IntentosPosibles = 20;
+        IntentosPosibles = 10;
     }
 
 }

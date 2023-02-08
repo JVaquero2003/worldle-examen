@@ -21,6 +21,8 @@ public abstract class AbstractPalabraService implements ServicePalabra {
 
     String PalabraCorrecta;
 
+    int IntentosPosibles;
+
     @Override
     public String getPalabraCorrecta() {
         return this.PalabraCorrecta;
@@ -36,11 +38,8 @@ public abstract class AbstractPalabraService implements ServicePalabra {
     }
 
     @Override
-    public String getIntentos(int intentos) {
-        if (intentos >= 3) {
-            return "Has superado el numero de intentos";
-        }
-        return "Has realizado " + intentos + " intentos";
+    public void getIntentos(int intentos) {
+        repository.getIntentos(intentos);
     }
 
     @Override

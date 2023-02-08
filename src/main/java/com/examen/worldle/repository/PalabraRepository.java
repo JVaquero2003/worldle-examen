@@ -10,9 +10,9 @@ public interface PalabraRepository {
 
     String comprobar(String palabra);
 
-    String getIntentos(int intentos);
+    void getIntentos(int intentos);
 
-    void guardarIntentos(int intentos);
+    void guardarIntentos(Palabra palabra);
 
     List<Palabra> listAllPalabra();
 }

@@ -10,9 +10,9 @@ public interface ServicePalabra {
 
     String getPalabraCorrecta();
 
-    String getIntentos(int intentos);
+    void getIntentos(int intentos);
 
-    void guardarIntentos(Palabra palabra);
+    int guardar(Palabra palabra);
 
     List<Palabra> listaPalabras();
 }

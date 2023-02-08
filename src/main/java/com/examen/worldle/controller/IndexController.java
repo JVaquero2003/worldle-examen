@@ -38,19 +38,17 @@ public class IndexController {
     @PostMapping("comprobarPalabra")
     public ModelAndView comprobarAcierto(@ModelAttribute("palabra") Palabra palabra) {
         System.out.println(palabra.palabra);
-        int intentos = 1;
-        servicePalabra.guardarIntentos(palabra.intentos);
         ModelAndView modelAndView = new ModelAndView("index");
         String resultado = servicePalabra.comprobar(palabra.palabra);
+        int contador = servicePalabra.getIntentos(palabra.intentos);
         if (resultado.equals("Correcto")) {
-            intentos++;
+            contador++;
         } else {
-            intentos++;
+            contador++;
         }
-        servicePalabra.getIntentos(intentos);
-        System.out.println(servicePalabra.getIntentos(intentos));
+        servicePalabra.guardarIntentos(palabra);
         modelAndView.addObject("resultado", resultado);
-        modelAndView.addObject("intentos", intentos);
+        modelAndView.addObject("contador", contador);
         return modelAndView;
     }
 }

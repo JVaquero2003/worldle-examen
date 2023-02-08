@@ -27,21 +27,18 @@ public class ListRepositoryPalabra implements PalabraRepository {
     }
 
     // metodo que devuelve el numero de intentos pero como maximo 3 sino me devuelve
-    // has superado el numero de intentos
+    // has superado el numero de intentos cogiendo los dartos de la lista
     @Override
-    public String getIntentos(int intentos) {
+    public void getIntentos(int intentos) {
         if (intentos >= 3) {
-            return "Has superado el numero de intentos";
+            intentos = 3;
         }
-        return "Has realizado " + intentos + " intentos";
+        intentos++;
     }
 
     @Override
-    public Palabra guardarIntentos(int intentos) {
-        Palabra palabra = new Palabra();
-        palabra.setIntentos(intentos);
+    public void guardarIntentos(Palabra palabra) {
         list.add(palabra);
-        return palabra;
     }
 
     @Override
