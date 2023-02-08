@@ -10,13 +10,17 @@
 		<meta charset="ISO-8859-1">
 		<title>Palabra</title>
 	</head>
-	<body>
+    <body>
 		<h3>Comprobar Palabra</h3>
-		<form:form action="addPalabraForm" method="post" modelAttribute="palabra">
+		<form:form action="comprobarPalabra" method="post" modelAttribute="palabra">
             <span>Palabra:</span>
             <form:input path="palabra" type="text" name="palabra"/>
             <br/>
 			<input type="submit"/>
 		</form:form>
+
+        <c:out value="${resultado}"></c:out>
+        <!--contador de intentos cada vez que resultado sea Incorrecto-->
+        
 	</body>
 </html>

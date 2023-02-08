@@ -1,15 +1,30 @@
 package com.examen.worldle.model;
 
 public class Palabra {
-    private String palabra;
-    private int cantidad;
+
+    public String palabra;
+    public int intentos;
 
     public Palabra() {
     }
 
-    public Palabra(String palabra, int cantidad) {
+    public Palabra(String palabra) {
+        super();
         this.palabra = palabra;
-        this.cantidad = cantidad;
+    }
+
+    public Palabra(String palabra, int intentos) {
+        super();
+        this.palabra = palabra;
+        this.intentos = intentos;
+    }
+
+    public int getIntentos() {
+        return intentos;
+    }
+
+    public void setIntentos(int intentos) {
+        this.intentos = intentos;
     }
 
     public String getPalabra() {
@@ -20,19 +35,9 @@ public class Palabra {
         this.palabra = palabra;
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
     @Override
     public String toString() {
         return "Palabra{" +
-                "palabra='" + palabra + '\'' +
-                ", cantidad=" + cantidad +
-                '}';
+                "palabra='" + palabra;
     }
 }

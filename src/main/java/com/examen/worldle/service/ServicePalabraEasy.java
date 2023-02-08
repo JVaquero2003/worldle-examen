@@ -10,11 +10,16 @@ import com.examen.worldle.repository.PalabraRepository;
 
 @Profile("easy")
 @Service
-public class ServicePalabraEasy implements ServicePalabra {
+public class ServicePalabraEasy extends AbstractPalabraService {
 
     Logger l = org.apache.logging.log4j.LogManager.getLogger();
 
     @Autowired
     @Qualifier("listPalabra")
     public PalabraRepository repository;
+
+    public ServicePalabraEasy() {
+        PalabraCorrecta = "hola";
+    }
+
 }
